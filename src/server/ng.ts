@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { provide } from 'angular2/core';
+import { HTTP_PROVIDERS } from 'angular2/http';
 import { PlatformLocation, APP_BASE_HREF, ROUTER_PROVIDERS } from 'angular2/router';
 import {
   REQUEST_URL,
@@ -29,6 +30,7 @@ export function renderComponent(html, component, providers, prebootOptions) {
 }
 
 const PROVIDERS = [
+  HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
   SERVER_LOCATION_PROVIDERS,
   provide(APP_BASE_HREF, { useValue: '/' }),

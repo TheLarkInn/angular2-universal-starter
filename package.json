@@ -59,6 +59,7 @@
     "zone.js": "0.5.15"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^0.17.0-rc.5",
     "chalk": "^1.1.1",
     "chokidar": "^1.4.2",
     "jasmine-core": "^2.4.1",

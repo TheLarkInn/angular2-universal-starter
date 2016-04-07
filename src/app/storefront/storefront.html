@@ -1,0 +1,6 @@
+<h1>This is the Storefront Component</h1>
+<ul class="productGrid">
+  <li *ngFor="#product of products | async">
+    <product [product]='product'></product>
+  </li>
+</ul>

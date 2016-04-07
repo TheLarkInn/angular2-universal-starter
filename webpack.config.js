@@ -53,15 +53,15 @@ const WATCH_OPTIONS = {
 };
 
 const DEV_OPTIONS = {
-  contentBase: false, 
-  queit: false, 
+  contentBase: false,
+  queit: false,
   noInfo: false,
   stats: STATS_OPTIONS
 };
 
 const LOADERS = [{
   test: /\.ts$/,
-  loader: 'ts',
+  loader: 'awesome-typescript-loader',
   query: {
     ignoreDiagnostics: [
       2403, // 2403 -> Subsequent variable declarations
@@ -92,11 +92,11 @@ const POSTCSS = function() {
 
 const DEFINE_CONSTANTS_PLUGIN = new DefinePlugin((function stringifyConstants() {
   const stringifiedConstants = {};
-  
+
   Object.keys(constants).forEach(function(constantName) {
-    stringifiedConstants[constantName] = JSON.stringify(constants[constantName]);    
+    stringifiedConstants[constantName] = JSON.stringify(constants[constantName]);
   });
-  
+
   return stringifiedConstants;
 })());
 
@@ -167,7 +167,7 @@ const WORKER_CONFIG = {
     ]
   },
   output: {
-    path: PUBLIC_DIR, 
+    path: PUBLIC_DIR,
     filename: '[name].js',
     chunkFilename: '[id].' + WORKER_NAME + '.js',
   },
@@ -238,7 +238,7 @@ const SERVER_CONFIG = {
   resolve: {
     extensions: ['', '.ts', '.js']
   },
-  module: { 
+  module: {
     loaders: LOADERS
   },
   postcss: POSTCSS
